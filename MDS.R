@@ -13,3 +13,10 @@ ex.mult.2 <- t(ex.matrix) %*% ex.matrix
 sqrt(sum((ex.mult[1,]-ex.mult[4,])^2))
 ex.dist <- dist(ex.mult)
 ex.dist
+
+# MDS
+ex.mds <- cmdscale(ex.dist)
+png('MDS.png')
+plot(ex.mds,type='n')
+text(ex.mds,c('A','B','C','D'))
+dev.off()
