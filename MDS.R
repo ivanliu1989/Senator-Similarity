@@ -5,3 +5,11 @@ row.names(ex.matrix)<- c('A','B','C','D')
 colnames(ex.matrix)<-c('P1','P2','P3','P4','P5','P6')
 
 # matrix transposition and multiplication
+t(ex.matrix)
+ex.mult <- ex.matrix %*% t(ex.matrix)
+ex.mult.2 <- t(ex.matrix) %*% ex.matrix
+
+# distance matrix
+sqrt(sum((ex.mult[1,]-ex.mult[4,])^2))
+ex.dist <- dist(ex.mult)
+ex.dist
